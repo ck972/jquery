@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 5</title>
+	<style>
+	body{
+		margin: 2%;
+		border: 1px solid black;
+		background-color: #b3b3b3;
+	}
+	#image{
+    	line-height:325px;
+		width: 388px;
+    	height: 325px;
+		border:5px solid black;
+		margin:0 auto;
+    	background-repeat: no-repeat;
+    	color:#FFFFFF;
+    	text-align: center;
+    	background-color: #8e68ff;
+    	background-size: 100%;
+    	margin-bottom:25px;
+    	font-size:150%;
+	}
+	.preview{
+		width:10%;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+	img{
+		width:95%;
+	}
+	h1{
+		text-align: center;
+	}
+	</style>
+
+	
+</head>
+<body>
+	<h1>Challenge 5</h1>
+		<div id = "image">
+			Hover over an image below.
+		</div>
+
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Good ol drinks" 
+			src = "images/profthingsnew.jpg">
+
+
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "I love Barnite" 
+			src = "images/barnitey2k.jpg">
+		
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Da fam" 
+			src = "images/family.jpg">
+
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Saturdays are for the boys" 
+			src = "images/madboys.jpg">			
+	
+		<img class = "preview" 
+			tabindex = "0"  
+			alt = "A good show" 
+			src = "images/randomdancelove.jpg">
+	
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			src = "images/yogazen.jpg" 
+			alt = "Take me back">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+
+		var imgs = $("img");
+		var msg = "Hover over an image below.";
+
+		$("img").each(function() {
+
+			$(this).mouseover( function() {
+	 			$('#image').css("background-image", "url('"+this.src+"')");
+	 			$('#image').html(this.alt);
+
+	 		})
+
+	 		$(this).mouseleave( function() {
+	 			$('#image').css("background-image", "url('')");
+	 			$('#image').html(msg);
+
+	 		})
+
+	 		$(this).focus( function() {
+	 			$('#image').css("background-image", "url('"+this.src+"')");
+	 			$('#image').html(this.alt);
+
+	 		})
+
+	 		$(this).blur( function() {
+	 			$('#image').css("background-image", "url('')");
+	 			$('#image').html(msg);
+
+	 		})
+
+
+		})
+
+
+	</script>
+
+
+</body>
+</html>
+	
