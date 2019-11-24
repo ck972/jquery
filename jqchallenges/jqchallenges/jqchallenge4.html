@@ -34,23 +34,30 @@
 
     <script>
         $("#ch4form").on('click', function() {
+            var validInput = true;
 
             if ($("#fullname").val().length === 0) {
 
-                $("#nameerrormsg").show();
-                return false;    
+                $("#nameerrormsg").css("display", "block");
+                validInput = false;    
             } 
 
-            else if ($("#streetaddr").val().length === 0) {
+            else {
+                $("#nameerrormsg").css("display", "none");
+            }
 
-                $("#addrerrormsg").show();
-                return false;    
+            if ($("#streetaddr").val().length === 0) {
+
+                $("#addrerrormsg").css("display", "block");
+                validInput = false;    
 
             }
             else {
 
-                window.location.href = "jqchallenge5.html";
+                 $("#streetaddr").css("display", "none");
             }
+
+            return validInput;
 
 
 
